@@ -12,7 +12,9 @@ public class CustomerFormController {
     public TextField txtCusName;
     public TextField txtCusAddress;
 
-    public void CustomerSaveOnAction(ActionEvent actionEvent) {
+    public void CustomerSaveOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+        Customer customer = new Customer(txtCusId.getText(), txtCusName.getText(), txtCusAddress.getText());
+        CustomerDBController.addCustomer(customer);
     }
 
 }
